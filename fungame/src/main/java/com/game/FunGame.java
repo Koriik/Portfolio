@@ -1,0 +1,221 @@
+package com.game;
+
+import java.util.Scanner;
+
+public class FunGame {
+   private static final int HEALTH = 100;
+   private static final int ARMOR = 100;
+   private static final int MANA = 50;
+   private static final int RAGE = 0;
+   private static final String GEAR_SLOT_ONE = "Mail Helmet";
+   private static final String GEAR_SLOT_TWO = "Mail Shoulders";
+   private static final String GEAR_SLOT_THREE = "Mail Chestgaurd";
+   private static final String GEAR_SLOT_FOUR =  "Mail Leggings";
+   private static final int MONEY = 50;
+   private static final String WEAPON = "Dull Sword";
+   private static final String YEAR = "20,000 B.C.";
+   private static final String HORSE = "Basic Horse";
+   private static final String PET_CREATURE = "Wolf";
+   private static final int LEVELS = 1;
+   private static final String SPELLS = "Light Flash";
+   private static final int MELEE_ATTACK = 5;
+   private DifferentPlayer player;
+   private Scanner scanner;
+   private Validation validation;
+   private String characterName;
+   private String holdClass;
+   private String holdSex;
+   private Boolean startKnight;
+   private Boolean startWizard;
+
+   /*This method instantiates the fungame class and calls the entranceMusic Method */
+   public static void main(String[] args) {
+      FunGame fungame = new FunGame();
+        fungame.run();
+   
+   }
+
+   public void run() {
+      scanner = new Scanner(System.in);
+      validation = new Validation();
+      entranceMusic();
+      welcomeUser(scanner);
+      fillerImmersion();
+      characterName(scanner);
+      fillerImmersion();
+      welcomeCharacter();
+      fillerImmersion();
+      selectCharacter(scanner);
+      fillerImmersion();
+      selectSex(scanner);
+      fillerImmersion();
+      choosingYourAdventure();
+      fillerImmersion();
+      startingAdventure();
+
+
+   }
+
+   /*This method creates an object of the MusicPlayer Class and calls its startPlaying method */
+   public void entranceMusic() {
+      player = new DifferentPlayer();
+      player.startMusic();
+   }
+
+   /*This method welcomes the user into the game and creates astrisks lines for immersion */
+   public void welcomeUser(Scanner scanner) {
+      System.out.println("Welcome to Aincent Dwellers!! This is a simple adventure to begin with, but can you withstand and outsmart the game?!");
+   }
+
+   public void characterName(Scanner scanner) {
+      while (true) {
+         String inputString;
+         System.out.println("Enter your character's name: ");
+         inputString = scanner.nextLine();
+         characterName = inputString;
+      
+         validation.isValidCharacterName(inputString);
+         break;   
+      }
+   }
+
+
+   public void welcomeCharacter() {
+      //printing out the characters name and blessing them.
+      System.out.println("Welcome: " + characterName + "!!! May the Ancient Dwellers be with you.");
+      //creating astrisks lines
+   }
+
+   /*this method prints out the character choices of Knight and Wizard with astrisks lines*/
+   public void selectCharacter(Scanner scanner) {
+      while (true) {
+         System.out.println("It's time to choose a character!");
+         System.out.println("Your choices are: \n#1: Knight #2: Wizard \nEnter your character: ");
+ 
+         String inputString = scanner.nextLine();
+         holdClass = inputString;
+ 
+         if (validation.verifyCharacter(holdClass, characterName)) {
+             // Character selection is valid, exit the loop
+             System.out.println("Your character choice is valid.");
+             break;
+         } else {
+             // Character selection is invalid, prompt the user again
+             System.out.println("Invalid character selection. Please try again.");
+         }
+     }
+   }
+   /*This method creates a while (true) loop for verification of input
+    * on the sex of the character, it then prints out astrisks
+    * then calls the startKnightadventure passing the scanner and sex
+    */
+   public void selectSex(Scanner scanner) {
+      
+      while(true) {
+         System.out.println("Are you a male or female?");
+         String inputString = scanner.nextLine();
+         holdSex = inputString;
+        
+         if (validation.verifySex(holdSex)) {
+             // Character selection is valid, exit the loop
+             System.out.println("Your sex choice is valid.");
+             break;
+         } else {
+             // Character selection is invalid, prompt the user again
+             System.out.println("Invalid sex selection. Please try again.");
+         }
+      }
+   }
+
+   public void choosingYourAdventure() {
+      if (holdClass.equalsIgnoreCase("Knight")) {
+         System.out.print("One moment while we prepare your Knight adventure!\n");
+         startKnight = true;
+      } else if (holdClass.equalsIgnoreCase("Wizard")) {
+         System.out.print("One moment while we creat your Wizard adventure!\n");
+         startWizard = true;
+      }
+   }
+
+   public void startingAdventure() {
+      if (startKnight != false) {
+         startKnightAdventure();
+      } else if (startWizard != false) {
+         startWizardAdventure();
+      }
+   }
+
+   /*This method instantiates the Knight constructor setting the Knight stats to it
+    * we then call the Knight class and call the entrance knight method from it.
+   */
+   public void startKnightAdventure() {
+      System.out.println("One Moment, your character stats are being created.");
+      fillerImmersion();
+      InterfaceKnightBuilder builder = new KnightBuilder();
+      InterfaceKnight interfaceKnight = builder.setCharacterName(characterName)
+                                             .setHealth(HEALTH)
+                                             .setArmor(ARMOR)
+                                             .setMana(MANA)
+                                             .setRage(RAGE)
+                                             .setGearSlotOne(GEAR_SLOT_ONE)
+                                             .setGearSlotTwo(GEAR_SLOT_TWO)
+                                             .setGearSlotThree(GEAR_SLOT_THREE)
+                                             .setGearSlotFour(GEAR_SLOT_FOUR)
+                                             .setMoney(MONEY)
+                                             .setWeapon(WEAPON)
+                                             .setYear(YEAR)
+                                             .setHorse(HORSE)
+                                             .setPetCreature(PET_CREATURE)
+                                             .setLevels(LEVELS)
+                                             .setSpells(SPELLS)
+                                             .setMeleeAttack(MELEE_ATTACK)
+                                             .setSex(holdSex)
+                                             .build();      
+      fillerImmersion();
+      System.out.println("Game is starting...");
+      fillerImmersion();
+      KnightEntrance entrance = new KnightEntrance();
+      entrance.entrance(holdSex);
+      fillerImmersion();
+      
+      endGame();
+   }
+
+   public void startWizardAdventure() {
+      Wizard wizard = new Wizard();
+      System.out.println("One Moment, your character stats are being created.");
+      fillerImmersion();
+      wizard.intializeStats(holdSex, characterName);
+      fillerImmersion();
+      System.out.println("Game is starting...");
+      fillerImmersion();
+      wizard.entrance();
+      endGame();
+   }
+
+   public void fillerImmersion() {
+      //creating astrisks lines
+      for(int x = 0; x < 4; ++x) {
+         System.out.println("***************");
+
+         try {
+            Thread.sleep(600L);
+         } catch (InterruptedException e) {
+            System.out.println("Thread interrupted: " + e.getMessage());
+         }
+      }
+   }
+
+   public void endGame() {
+      System.out.println("Press 'Q' or 'q' to quit: ");
+      String inputString = scanner.nextLine();
+
+      if (inputString.equalsIgnoreCase("q")) {
+         System.out.println("Quiting the program.");
+         player.stop();
+         scanner.close();
+   
+      }
+   }
+  
+}
