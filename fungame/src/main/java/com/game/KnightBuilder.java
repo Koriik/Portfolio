@@ -1,6 +1,6 @@
 package com.game;
 
-public class KnightBuilder implements InterfaceKnightBuilder {
+public class KnightBuilder implements InterfaceBuilder {
     private static final int HEALTH = 100;
     private static final int ARMOR = 100;
     private static final int MANA = 50;
@@ -28,7 +28,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
     private String sex;
 
     @Override
-    public InterfaceKnightBuilder setCharacterName(String characterName) {
+    public InterfaceBuilder setCharacterName(String characterName) {
         if (characterName == null || characterName.trim().isEmpty()) {
             throw new IllegalArgumentException("Character name cannot be null or empty");
         } else {
@@ -38,7 +38,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
     @Override
-    public InterfaceKnightBuilder setHealth(int health) {
+    public InterfaceBuilder setHealth(int health) {
         if (health != HEALTH ) {
             throw new IllegalArgumentException("Health should be equal to 100");
         } else {
@@ -48,7 +48,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     } 
 
-    public InterfaceKnightBuilder setArmor(int armor) {
+    public InterfaceBuilder setArmor(int armor) {
         if (armor != ARMOR ) {
             throw new IllegalArgumentException("Armor should be equal to 100");
         } else {
@@ -58,7 +58,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setMana(int mana) {
+    public InterfaceBuilder setMana(int mana) {
         if (mana != MANA ) {
             throw new IllegalArgumentException("Mana should be equal to 50");
         } else {
@@ -68,7 +68,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setRage(int rage) {
+    public InterfaceBuilder setRage(int rage) {
         if (rage != RAGE ) {
             throw new IllegalArgumentException("Rage should be equal to 0");
         } else {
@@ -78,7 +78,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setGearSlotOne(String gearSlotOne) {
+    public InterfaceBuilder setGearSlotOne(String gearSlotOne) {
         if (gearSlotOne == null || gearSlotOne.trim().isEmpty() ) {
             throw new IllegalArgumentException("GearSlot1 cannot be null or empty");
         } else {
@@ -88,7 +88,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setGearSlotTwo(String gearSlotTwo) {
+    public InterfaceBuilder setGearSlotTwo(String gearSlotTwo) {
         if (gearSlotTwo == null || gearSlotTwo.trim().isEmpty() ) {
             throw new IllegalArgumentException("GearSlot2 cannot be null or empty");
         } else {
@@ -98,7 +98,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setGearSlotThree(String gearSlotThree) {
+    public InterfaceBuilder setGearSlotThree(String gearSlotThree) {
         if (gearSlotThree == null || gearSlotThree.trim().isEmpty() ) {
             throw new IllegalArgumentException("GearSlot3 cannot be null or empty");
         } else {
@@ -108,7 +108,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setGearSlotFour(String gearSlotFour) {
+    public InterfaceBuilder setGearSlotFour(String gearSlotFour) {
         if (gearSlotFour == null || gearSlotFour.trim().isEmpty()) {
             throw new IllegalArgumentException("GearSlot4 cannot be null or empty");
         } else {
@@ -118,7 +118,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setMoney(int money) {
+    public InterfaceBuilder setMoney(int money) {
         if (money != MONEY ) {
             throw new IllegalArgumentException("Money should be equal to 50");
         } else {
@@ -128,7 +128,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setWeapon(String weapon) {
+    public InterfaceBuilder setWeapon(String weapon) {
         if (weapon == null || weapon.trim().isEmpty()) {
             throw new IllegalArgumentException("Weapon cannot be null or empty");
         } else {
@@ -138,7 +138,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setYear(String year) {
+    public InterfaceBuilder setYear(String year) {
         if (year == null || year.trim().isEmpty() ) {
             throw new IllegalArgumentException("Year cannot be null or empty");
         } else {
@@ -148,7 +148,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setHorse(String horse) {
+    public InterfaceBuilder setHorse(String horse) {
         if ( horse == null || horse.trim().isEmpty() ) {
             throw new IllegalArgumentException("Horse cannot be null or empty");
         } else {
@@ -158,7 +158,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setPetCreature(String petCreature) {
+    public InterfaceBuilder setPetCreature(String petCreature) {
         if (petCreature == null || petCreature.trim().isEmpty() ) {
             throw new IllegalArgumentException("Pet Creature cannot be null or empty");
         } else {
@@ -168,7 +168,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setLevels(int levels) {
+    public InterfaceBuilder setLevels(int levels) {
         if (levels != LEVELS ) {
             throw new IllegalArgumentException("Levels should be equal to 1");
         } else {
@@ -178,7 +178,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setSpells(String spells) {
+    public InterfaceBuilder setSpells(String spells) {
         if (spells == null || spells.trim().isEmpty() ) {
             throw new IllegalArgumentException("Spells cannot be null or empty");
         } else {
@@ -188,7 +188,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setMeleeAttack(int meleeAttack) {
+    public InterfaceBuilder setMeleeAttack(int meleeAttack) {
         if ( meleeAttack != MELEE_ATTACK ) {
             throw new IllegalArgumentException("Melee Attack should be equal to 5");
         } else {
@@ -198,7 +198,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnightBuilder setSex(String sex) {
+    public InterfaceBuilder setSex(String sex) {
         if (sex == null || sex.trim().isEmpty() ) {
             throw new IllegalArgumentException("Sex cannot be null or empty");
         } else {
@@ -208,7 +208,7 @@ public class KnightBuilder implements InterfaceKnightBuilder {
         return this;
     }
 
-    public InterfaceKnight build() {
+    public GameInterface build() {
         return new Knight(characterName, health, armor, 
                 mana, rage, gearSlotOne, gearSlotTwo, gearSlotThree, 
                 gearSlotFour, money, weapon, year, horse, petCreature, 

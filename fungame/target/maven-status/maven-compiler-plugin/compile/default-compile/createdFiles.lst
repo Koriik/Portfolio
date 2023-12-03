@@ -1,7 +1,5 @@
 com\game\FunGame.class
-com\game\Knight.class
-com\game\App.class
 com\game\Validation.class
 com\game\Wizard.class
 com\game\DifferentPlayer.class
-com\game\Character.class
+com\game\Knight.class

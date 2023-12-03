@@ -1,7 +1,7 @@
 package com.game;
 
 
-public class Knight implements InterfaceKnight {
+public class Knight implements GameInterface {
   
 
    private String characterName;

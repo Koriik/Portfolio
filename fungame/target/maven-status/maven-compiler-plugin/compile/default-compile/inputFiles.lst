@@ -1,7 +1,11 @@
 A:\TextGame\fungame\src\main\java\com\game\Knight.java
 A:\TextGame\fungame\src\main\java\com\game\Wizard.java
-A:\TextGame\fungame\src\main\java\com\game\App.java
 A:\TextGame\fungame\src\main\java\com\game\Validation.java
-A:\TextGame\fungame\src\main\java\com\game\Character.java
+A:\TextGame\fungame\src\main\java\com\game\KnightBuilder.java
+A:\TextGame\fungame\src\main\java\com\game\WizardEntrance.java
+A:\TextGame\fungame\src\main\java\com\game\WizardBuilder.java
+A:\TextGame\fungame\src\main\java\com\game\InterfaceBuilder.java
+A:\TextGame\fungame\src\main\java\com\game\KnightEntrance.java
+A:\TextGame\fungame\src\main\java\com\game\GameInterface.java
 A:\TextGame\fungame\src\main\java\com\game\DifferentPlayer.java
 A:\TextGame\fungame\src\main\java\com\game\FunGame.java
