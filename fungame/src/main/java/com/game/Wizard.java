@@ -49,74 +49,145 @@ public class Wizard implements GameInterface {
       
    }
 
-   public String getCharacterName() {
+   /** 
+    * @return String
+    */
+    public String getCharacterName() {
       return this.characterName;
    }
 
+   
+   /** 
+    * @return int
+    */
    public int getHealth() {
       return this.health;
    }
 
+   
+   /** 
+    * @return int
+    */
    public int getArmor() {
       return this.armor;
    }
 
+   
+   /** 
+    * @return int
+    */
    public int getMana() {
       return this.mana;
    }
 
+   
+   /** 
+    * @return int
+    */
    public int getRage() {
       return this.rage;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getGearSlotOne() {
       return this.gearSlotOne;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getGearSlotTwo() {
       return this.gearSlotTwo;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getGearSlotThree() {
       return this.gearSlotThree;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getGearSlotFour() {
       return this.gearSlotFour;
    }
 
+   
+   /** 
+    * @return int
+    */
    public int getMoney() {
       return this.money;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getWeapon() {
       return this.weapon;
    }
 
+   
+   /** 
+    * @return String
+    */
    public String getYear() {
       return this.year;
    }
 
+
+   /** 
+    * @return String
+    */
    public String getHorse() {
       return this.horse;
    }
 
+
+   /** 
+    * @return String
+    */
    public String getPetCreature() {
       return this.petCreature;
    }
 
+
+   /** 
+    * @return int
+    */
    public int getLevels() {
       return this.levels;
    }
 
+
+   /** 
+    * @return String
+    */
    public String getSpells() {
       return this.spells;
    }
 
+
+   /** 
+    * @return int
+    */
    public int getMeleeAttack() {
       return this.meleeAttack;
    }
 
+
+   /** 
+    * @return String
+    */
    public String getSex() {
       return this.sex;
    }

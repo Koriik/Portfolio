@@ -38,7 +38,11 @@ public class FunGame {
    private Boolean startKnight = false;
    private Boolean startWizard = false;
 
-   /*This method instantiates the fungame class and calls the entranceMusic Method */
+   
+   /** 
+   * @param args
+   * This method instantiates the fungame class and calls the entranceMusic Method 
+   */
    public static void main(String[] args) {
       FunGame fungame = new FunGame();
       fungame.run();
@@ -64,17 +68,27 @@ public class FunGame {
       startingAdventure();
    }
 
-   /*This method creates an object of the MusicPlayer Class and calls its startPlaying method */
+   /*
+   * This method creates an object of the MusicPlayer Class and calls its startPlaying method 
+   */
    public void entranceMusic() {
       player = new DifferentPlayer();
       player.startMusic();
    }
 
-   /*This method welcomes the user into the game and creates astrisks lines for immersion */
+   
+   /** 
+   * @param scanner
+   *This method welcomes the user into the game and creates astrisks lines for immersion 
+   */
    public void welcomeUser(Scanner scanner) {
       System.out.println("Welcome to Aincent Dwellers!! This is a simple adventure to begin with, but can you withstand and outsmart the game?!");
    }
 
+   /**
+    * 
+    * @param scanner
+    */
    public void characterName(Scanner scanner) {
       while (true) {
          String inputString;
@@ -87,13 +101,17 @@ public class FunGame {
       }
    }
 
-
+   /**
+    * 
+    */
    public void welcomeCharacter() {
       //printing out the characters name and blessing them.
       System.out.println("Welcome: " + characterName + "!!! May the Ancient Dwellers be with you.");
       //creating astrisks lines
    }
-
+   /**
+    * @param scanner
+    */
    /*this method prints out the character choices of Knight and Wizard with astrisks lines*/
    public void selectCharacter(Scanner scanner) {
       while (true) {
@@ -113,7 +131,9 @@ public class FunGame {
          }
      }
    }
-   /*This method creates a while (true) loop for verification of input
+   /**
+    * @param scanner
+    * This method creates a while (true) loop for verification of input
     * on the sex of the character, it then prints out astrisks
     * then calls the startKnightadventure passing the scanner and sex
     */
@@ -135,6 +155,9 @@ public class FunGame {
       }
    }
 
+   /**
+    * 
+    */
    public void choosingYourAdventure() {
 
       if (holdClass.equalsIgnoreCase("Knight")) {
@@ -147,7 +170,9 @@ public class FunGame {
          System.out.println(startWizard);
       }
    }
-
+   /**
+   * 
+   */
    public void startingAdventure() {
       if (startKnight != false) {
          startKnightAdventure();
@@ -157,7 +182,7 @@ public class FunGame {
    }
 
    /*This method instantiates the Knight constructor setting the Knight stats to it
-    * we then call the Knight class and call the entrance knight method from it.
+   * we then call the Knight class and call the entrance knight method from it.
    */
    public void startKnightAdventure() {
       System.out.println("One Moment, your character stats are being created.");
@@ -192,6 +217,9 @@ public class FunGame {
       endGame();
    }
 
+   /**
+   * 
+   */
    public void startWizardAdventure() {
       System.out.println("One Moment, your character stats are being created.");
       fillerImmersion();
@@ -225,6 +253,9 @@ public class FunGame {
       endGame();
    }
 
+   /**
+   * 
+   */
    public void fillerImmersion() {
       //creating astrisks lines
       for(int x = 0; x < 4; ++x) {
@@ -238,6 +269,9 @@ public class FunGame {
       }
    }
 
+   /**
+   * 
+   */
    public void endGame() {
       System.out.println("Press 'Q' or 'q' to quit: ");
       String inputString = scanner.nextLine();
