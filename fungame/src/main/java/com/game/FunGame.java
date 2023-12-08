@@ -115,45 +115,49 @@ public class FunGame {
    /*this method prints out the character choices of Knight and Wizard with astrisks lines*/
    public void selectCharacter(Scanner scanner) {
       while (true) {
-         System.out.println("It's time to choose a character!");
-         System.out.println("Your choices are: \n#1: Knight #2: Wizard \nEnter your character: ");
- 
-         String inputString = scanner.nextLine();
-         holdClass = inputString;
- 
-         if (validation.verifyCharacter(holdClass, characterName)) {
-             // Character selection is valid, exit the loop
-             System.out.println("Your character choice is valid.");
-             break;
-         } else {
-             // Character selection is invalid, prompt the user again
-             System.out.println("Invalid character selection. Please try again.");
-         }
-     }
-   }
+          System.out.println("It's time to choose a character!");
+          System.out.println("Your choices are: \n#1: Knight #2: Wizard \nEnter your character: ");
+  
+          String inputString = scanner.nextLine();
+          holdClass = inputString;
+  
+          if (validation.verifyCharacter(holdClass, characterName)) {
+              // Character selection is valid, set startKnight or startWizard to true
+              if (holdClass.equalsIgnoreCase("Knight")) {
+                  startKnight = true;
+              } else if (holdClass.equalsIgnoreCase("Wizard")) {
+                  startWizard = true;
+              }
+              System.out.println("Your character choice is valid.");
+              break;
+          } else {
+              // Character selection is invalid, prompt the user again
+              System.out.println("Invalid character selection. Please try again.");
+          }
+      }
+  }
    /**
     * @param scanner
     * This method creates a while (true) loop for verification of input
     * on the sex of the character, it then prints out astrisks
     * then calls the startKnightadventure passing the scanner and sex
     */
-   public void selectSex(Scanner scanner) {
-      
-      while(true) {
-         System.out.println("Are you a male or female?");
-         String inputString = scanner.nextLine();
-         holdSex = inputString;
-        
-         if (validation.verifySex(holdSex)) {
-             // Character selection is valid, exit the loop
-             System.out.println("Your sex choice is valid.");
-             break;
-         } else {
-             // Character selection is invalid, prompt the user again
-             System.out.println("Invalid sex selection. Please try again.");
-         }
+    public void selectSex(Scanner scanner) {
+      while (true) {
+          System.out.println("Are you a male or female?");
+          String inputString = scanner.nextLine();
+          holdSex = inputString;
+  
+          if (validation.verifySex(holdSex)) {
+              // Sex selection is valid, exit the loop
+              System.out.println("Your sex choice is valid.");
+              break;
+          } else {
+              // Sex selection is invalid, prompt the user again
+              System.out.println("Invalid sex selection. Please try again.");
+          }
       }
-   }
+  }
 
    /**
     * 
@@ -188,7 +192,7 @@ public class FunGame {
       System.out.println("One Moment, your character stats are being created.");
       fillerImmersion();
       InterfaceBuilder knightBuilder = new KnightBuilder();
-      GameInterface knighInterface = knightBuilder.setCharacterName(characterName)
+      GameInterface knightInterface = knightBuilder.setCharacterName(characterName)
                                              .setHealth(HEALTH)
                                              .setArmor(ARMOR)
                                              .setMana(MANA)
@@ -210,7 +214,7 @@ public class FunGame {
       fillerImmersion();
       System.out.println("Game is starting...");
       fillerImmersion();
-      KnightEntrance entrance = new KnightEntrance();
+      KnightEntrance entrance = new KnightEntrance(knightInterface);
       entrance.entrance(holdSex);
       fillerImmersion();
       

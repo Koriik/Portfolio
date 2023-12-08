@@ -193,4 +193,9 @@ public class Knight implements GameInterface {
       return this.sex;
    }
 
+   public void setHealth(int newHealth) {
+      this.health = newHealth;
+   }
+
+
 }

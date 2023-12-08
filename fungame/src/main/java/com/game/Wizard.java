@@ -192,4 +192,8 @@ public class Wizard implements GameInterface {
       return this.sex;
    }
 
+   public void setHealth(int newHealth) {
+      this.health = newHealth;
+   }
+
 }

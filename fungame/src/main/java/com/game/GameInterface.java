@@ -22,4 +22,5 @@ public interface GameInterface {
     String getSpells();
     int getMeleeAttack();
     String getSex();
+    void setHealth(int health);
 }
